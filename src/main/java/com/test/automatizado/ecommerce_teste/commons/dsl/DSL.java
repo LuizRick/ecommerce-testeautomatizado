@@ -55,7 +55,13 @@ public class DSL {
 	public void selecionarCombo(String id, String valor) {
 		WebElement element = driver.findElement(By.id(id));
 		Select combo = new Select(element);
-		combo.selectByVisibleText(valor);
+		combo.selectByValue(valor);
+	}
+	
+	public void selecionarComboIndex(String id,String index) {
+		WebElement element = driver.findElement(By.id(id));
+		Select combo = new Select(element);
+		combo.selectByIndex(Integer.parseInt(index));
 	}
 	
 	public void deselecionarCombo(String id, String valor) {
@@ -71,7 +77,7 @@ public class DSL {
 	}
 	
 	public List<String> obterValoresCombo(String id) {
-		WebElement element = driver.findElement(By.id("elementosForm:esportes"));
+		WebElement element = driver.findElement(By.id(id));
 		Select combo = new Select(element);
 		List<WebElement> allSelectedOptions = combo.getAllSelectedOptions();
 		List<String> valores = new ArrayList<String>();
