@@ -1,10 +1,6 @@
 package com.test.automatizado.ecommerce_teste.cliente;
 
-import java.util.concurrent.TimeUnit;
-
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,6 +15,7 @@ public class ClienteTest extends SeleniumBase {
 	public void testaCadastro() throws InterruptedException {
 		GeraCpfCnpj gCpfCnpj = new GeraCpfCnpj();
 		driver.navigate().to(getUrlBase() + "/admin/cliente/cadastro");
+		(new WebDriverWait(driver, 70)).until(ExpectedConditions.elementToBeClickable(By.id("nome")));
 		dsl.escrever(By.id("nome"), "fulano num " + getRamdomNumber(1, 465456465));
 		dsl.escrever(By.id("dataNascimento"), "03/03/1993");
 		dsl.escrever(By.id("cpf"), gCpfCnpj.cpf());
@@ -95,6 +92,7 @@ public class ClienteTest extends SeleniumBase {
 		driver.findElement(By.xpath("//*[@id=\"resultadoPesquisa\"]/tbody/tr[2]/td[5]/a[1]")).click();
 		(new WebDriverWait(driver, 30)).until(driver -> dsl.executarJS("return document.readyState").equals("complete"));
 		GeraCpfCnpj gCpfCnpj = new GeraCpfCnpj();
+		(new WebDriverWait(driver, 70)).until(ExpectedConditions.elementToBeClickable(By.id("nome")));
 		dsl.escrever(By.id("nome"), "fulano num " + getRamdomNumber(1, 465456465));
 		dsl.escrever(By.id("dataNascimento"), "03/03/1993");
 		dsl.escrever(By.id("cpf"), gCpfCnpj.cpf());
@@ -150,6 +148,7 @@ public class ClienteTest extends SeleniumBase {
 	public void deveRetornarValidacaoEnderecoEntrega() {
 		GeraCpfCnpj gCpfCnpj = new GeraCpfCnpj();
 		driver.navigate().to(getUrlBase() + "/admin/cliente/cadastro");
+		(new WebDriverWait(driver, 70)).until(ExpectedConditions.elementToBeClickable(By.id("nome")));
 		dsl.escrever(By.id("nome"), "fulano num " + getRamdomNumber(1, 465456465));
 		dsl.escrever(By.id("dataNascimento"), "03/03/1993");
 		dsl.escrever(By.id("cpf"), gCpfCnpj.cpf());
@@ -165,7 +164,7 @@ public class ClienteTest extends SeleniumBase {
 		dsl.clicarBotao("btnAddCartao");
 		(new WebDriverWait(driver, 70)).until(driver -> dsl.executarJS("return document.readyState").equals("complete"));
 		(new WebDriverWait(driver, 70)).until(ExpectedConditions.elementToBeClickable(By.id("btntab-endereco"))).click();
-		for(int i = 0; i < 1;i++) {
+		for(int i = 0; i < 2;i++) {
 			(new WebDriverWait(driver, 70)).until(ExpectedConditions.visibilityOfElementLocated(By.id("enderecos" + i + ".descricao")));
 			dsl.escrever(By.id("enderecos" + i + ".descricao"), "decricao num :" + getRamdomNumber(1, 465456465));
 			dsl.escrever(By.id("enderecos" + i + ".tipoResidencia"), "casa");
@@ -205,6 +204,7 @@ public class ClienteTest extends SeleniumBase {
 	public void deveRetornarValidacaoEnderecoCobranca() {
 		GeraCpfCnpj gCpfCnpj = new GeraCpfCnpj();
 		driver.navigate().to(getUrlBase() + "/admin/cliente/cadastro");
+		(new WebDriverWait(driver, 70)).until(ExpectedConditions.elementToBeClickable(By.id("nome")));
 		dsl.escrever(By.id("nome"), "fulano num " + getRamdomNumber(1, 465456465));
 		dsl.escrever(By.id("dataNascimento"), "03/03/1993");
 		dsl.escrever(By.id("cpf"), gCpfCnpj.cpf());
@@ -220,7 +220,7 @@ public class ClienteTest extends SeleniumBase {
 		dsl.clicarBotao("btnAddCartao");
 		(new WebDriverWait(driver, 70)).until(driver -> dsl.executarJS("return document.readyState").equals("complete"));
 		(new WebDriverWait(driver, 70)).until(ExpectedConditions.elementToBeClickable(By.id("btntab-endereco"))).click();
-		for(int i = 0; i < 1;i++) {
+		for(int i = 0; i < 2;i++) {
 			(new WebDriverWait(driver, 70)).until(ExpectedConditions.visibilityOfElementLocated(By.id("enderecos" + i + ".descricao")));
 			dsl.escrever(By.id("enderecos" + i + ".descricao"), "decricao num :" + getRamdomNumber(1, 465456465));
 			dsl.escrever(By.id("enderecos" + i + ".tipoResidencia"), "casa");
@@ -259,6 +259,7 @@ public class ClienteTest extends SeleniumBase {
 	public void deveRetornarValidcaoSenhaForte() {
 		GeraCpfCnpj gCpfCnpj = new GeraCpfCnpj();
 		driver.navigate().to(getUrlBase() + "/admin/cliente/cadastro");
+		(new WebDriverWait(driver, 70)).until(ExpectedConditions.elementToBeClickable(By.id("nome")));
 		dsl.escrever(By.id("nome"), "fulano num " + getRamdomNumber(1, 465456465));
 		dsl.escrever(By.id("dataNascimento"), "03/03/1993");
 		dsl.escrever(By.id("cpf"), gCpfCnpj.cpf());
@@ -314,6 +315,7 @@ public class ClienteTest extends SeleniumBase {
 	public void deveRetornarValidacaoConfirmacaoSenha() {
 		GeraCpfCnpj gCpfCnpj = new GeraCpfCnpj();
 		driver.navigate().to(getUrlBase() + "/admin/cliente/cadastro");
+		(new WebDriverWait(driver, 70)).until(ExpectedConditions.elementToBeClickable(By.id("nome")));
 		dsl.escrever(By.id("nome"), "fulano num " + getRamdomNumber(1, 465456465));
 		dsl.escrever(By.id("dataNascimento"), "03/03/1993");
 		dsl.escrever(By.id("cpf"), gCpfCnpj.cpf());

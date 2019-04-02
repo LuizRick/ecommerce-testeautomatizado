@@ -24,6 +24,10 @@ public abstract class SeleniumBase {
 
 	@Before
 	public void inicializa() {
+		if(System.getProperty("user.name").equals("luizmonteiro")) {
+			System.setProperty("webdriver.chrome.driver" , "C:/Users/luizmonteiro/webdrivers/chromedriver.exe");
+		}
+		
 		options = new ChromeOptions();
 		//options.addArguments("--headless");
 		driver = new ChromeDriver(options);
