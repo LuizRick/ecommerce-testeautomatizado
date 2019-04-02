@@ -98,6 +98,7 @@ public class GeraCpfCnpj {
 		System.out.printf("CNPJ: %s, Valido: %s\n", cnpj, gerador.isCNPJ(cnpj));
 	}
 
+	@SuppressWarnings("unused")
 	private void pontuacao() {
 		if (true)
 			comPontos = true;

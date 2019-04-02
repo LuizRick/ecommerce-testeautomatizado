@@ -2,6 +2,8 @@ package com.test.automatizado.ecommerce_teste.produto;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.test.automatizado.ecommerce_teste.commons.SeleniumBase;
 
@@ -123,7 +125,7 @@ public class ProdutoTest extends SeleniumBase {
 		dsl.clicarBotao("btnConsultar");
 		dsl.executarJS("document.querySelectorAll('#resultadoPesquisa a')[3].click()", "");
 		dsl.clicarBotao("btnInativar");
-		dsl.selecionarCombo("categoriaInativacao", "FORAMERCADO");
+		dsl.selecionarCombo("categoriaInativacao", "RETORNOMERCADO");
 		dsl.escrever(By.id("justificativaInativacao"), "teste automaitzado de inativação");
 		dsl.clicarBotao("btnInativar");
 		callFinish = false;
@@ -140,6 +142,7 @@ public class ProdutoTest extends SeleniumBase {
 	@Test
 	public void deveRetonarValidacaoReentrada() {
 		driver.navigate().to(getUrlBase() + "/admin/produtos/consultar");
+		(new WebDriverWait(driver, 70)).until(ExpectedConditions.elementToBeClickable(By.id("btnConsultar")));
 		dsl.clicarBotao("btnConsultar");
 		dsl.escrever(By.id("estoque"), "100");
 		dsl.clicarBotao("btnSalvar");
