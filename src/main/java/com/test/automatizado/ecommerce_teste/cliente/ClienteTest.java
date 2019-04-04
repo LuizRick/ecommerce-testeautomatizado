@@ -64,7 +64,7 @@ public class ClienteTest extends SeleniumBase {
 		dsl.escrever(By.id("usuario.confirmaPassword"), "LH!336mn");
 		
 		dsl.clicarBotao("btnSalvarCliente");
-		callFinish = false;
+		callFinish = true;
 	}
 	
 	
