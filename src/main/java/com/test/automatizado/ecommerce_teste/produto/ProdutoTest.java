@@ -23,7 +23,7 @@ public class ProdutoTest extends SeleniumBase {
 		dsl.selecionarCombo("grupoPrecificacao", getRamdomNumber(1, 4));
 		dsl.escrever(By.id("codigoBarras"), getRamdomNumber(130000000));
 		dsl.escrever(By.id("estoque"), getRamdomNumber(1,100));
-		dsl.escrever(By.id("valorCusto"), getRamdomNumber(4000D));
+		dsl.escrever(By.id("valorCusto"), getRamdomNumber(100,4000));
 		dsl.escrever(By.id("caracteristicas"), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ex metus, "
 				+ "semper et euismod varius, euismod vitae velit. Sed posuere est non odio euismod efficitur. Quisque efficitur "
 				+ "placerat ornare. Maecenas interdum urna eget justo accumsan, lacinia finibus massa porttitor. Proin egestas");
