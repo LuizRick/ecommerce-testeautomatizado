@@ -89,14 +89,13 @@ public class ClienteTest extends SeleniumBase {
 	public void deveVisualizarEditar() {
 		driver.navigate().to(getUrlBase() + "/admin/clientes/consultar");
 		driver.findElement(By.xpath("//*[@id=\"frmCliente\"]/button")).click();
-		driver.findElement(By.xpath("//*[@id=\"resultadoPesquisa\"]/tbody/tr[2]/td[5]/a[1]")).click();
+		driver.findElement(By.xpath("//*[@id=\"resultadoPesquisa\"]/tbody/tr/td[5]/a[1]")).click();
 		(new WebDriverWait(driver, 30)).until(driver -> dsl.executarJS("return document.readyState").equals("complete"));
 		GeraCpfCnpj gCpfCnpj = new GeraCpfCnpj();
 		(new WebDriverWait(driver, 70)).until(ExpectedConditions.elementToBeClickable(By.id("nome")));
 		dsl.escrever(By.id("nome"), "fulano num " + getRamdomNumber(1, 465456465));
 		dsl.escrever(By.id("dataNascimento"), "03/03/1993");
 		dsl.escrever(By.id("cpf"), gCpfCnpj.cpf());
-		dsl.escrever(By.id("usuario.email"), String.format("email_%s@gmail.com", getRamdomNumber(1, 100000)));
 		dsl.escrever(By.id("telefone.ddd"), "11");
 		dsl.escrever(By.id("telefone.numero"), "456895253");
 		dsl.selecionarCombo("telefone.tipo", "RESIDENCIAL");
