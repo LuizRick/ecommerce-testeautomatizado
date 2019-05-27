@@ -9,9 +9,14 @@ import com.test.automatizado.ecommerce_teste.commons.SeleniumBase;
 
 public class ProdutoTest extends SeleniumBase {
 
+
 	
 	@Test
 	public void testaCadastro() {
+		driver.navigate().to(getUrlBase() + "/conta/login");
+		dsl.escrever(By.id("email"), "luizmon.silva@gmail.com");
+		dsl.escrever(By.id("password"),"adminLH!336mn");
+		dsl.clicarBotao("btnLogar");
 		driver.navigate().to(getUrlBase() + "/admin/produtos/cadastro");
 		dsl.escrever(By.id("descricao"), "Produto teste " + Math.random() * 100);
 		dsl.escrever(By.id("marca"), "Marca teste " + Math.random() * 100);
@@ -35,6 +40,10 @@ public class ProdutoTest extends SeleniumBase {
 	
 	@Test
 	public void deveRetornarResultadoPesquisa() {
+		driver.navigate().to(getUrlBase() + "/conta/login");
+		dsl.escrever(By.id("email"), "luizmon.silva@gmail.com");
+		dsl.escrever(By.id("password"),"adminLH!336mn");
+		dsl.clicarBotao("btnLogar");
 		driver.navigate().to(getUrlBase() + "/admin/produtos/consultar");
 		dsl.clicarBotao("btnConsultar");
 		callFinish = false;
@@ -43,6 +52,10 @@ public class ProdutoTest extends SeleniumBase {
 	
 	@Test
 	public void deveRetornarResultadoPesquisaHardware() {
+		driver.navigate().to(getUrlBase() + "/conta/login");
+		dsl.escrever(By.id("email"), "luizmon.silva@gmail.com");
+		dsl.escrever(By.id("password"),"adminLH!336mn");
+		dsl.clicarBotao("btnLogar");
 		driver.navigate().to(getUrlBase() + "/admin/produtos/consultar");
 		dsl.selecionarCombo("departamento", "1");
 		dsl.clicarBotao("btnConsultar");
@@ -52,6 +65,10 @@ public class ProdutoTest extends SeleniumBase {
 	
 	@Test
 	public void deveRetornarResultadoVisualizar() {
+		driver.navigate().to(getUrlBase() + "/conta/login");
+		dsl.escrever(By.id("email"), "luizmon.silva@gmail.com");
+		dsl.escrever(By.id("password"),"adminLH!336mn");
+		dsl.clicarBotao("btnLogar");
 		driver.navigate().to(getUrlBase() + "/admin/produtos/consultar");
 		dsl.clicarBotao("btnConsultar");
 		dsl.executarJS("document.querySelector('#resultadoPesquisa a').click()", "");
@@ -61,6 +78,10 @@ public class ProdutoTest extends SeleniumBase {
 	
 	@Test
 	public void deveEditarProduto() {
+		driver.navigate().to(getUrlBase() + "/conta/login");
+		dsl.escrever(By.id("email"), "luizmon.silva@gmail.com");
+		dsl.escrever(By.id("password"),"adminLH!336mn");
+		dsl.clicarBotao("btnLogar");
 		driver.navigate().to(getUrlBase() + "/admin/produtos/consultar");
 		dsl.clicarBotao("btnConsultar");
 		dsl.executarJS("document.querySelectorAll('#resultadoPesquisa a')[5].click()", "");
@@ -83,6 +104,10 @@ public class ProdutoTest extends SeleniumBase {
 	
 	@Test
 	public void InativarProduto() {
+		driver.navigate().to(getUrlBase() + "/conta/login");
+		dsl.escrever(By.id("email"), "luizmon.silva@gmail.com");
+		dsl.escrever(By.id("password"),"adminLH!336mn");
+		dsl.clicarBotao("btnLogar");
 		driver.navigate().to(getUrlBase() + "/admin/produtos/consultar");
 		dsl.clicarBotao("btnConsultar");
 		dsl.executarJS("document.querySelectorAll('#resultadoPesquisa a')[3].click()", "");
@@ -95,6 +120,10 @@ public class ProdutoTest extends SeleniumBase {
 	
 	@Test
 	public void AtivarProduto() {
+		driver.navigate().to(getUrlBase() + "/conta/login");
+		dsl.escrever(By.id("email"), "luizmon.silva@gmail.com");
+		dsl.escrever(By.id("password"),"adminLH!336mn");
+		dsl.clicarBotao("btnLogar");
 		driver.navigate().to(getUrlBase() + "/admin/produtos/consultar");
 		dsl.clicarBotao("btnConsultar");
 		dsl.executarJS("document.querySelectorAll('#resultadoPesquisa a')[3].click()", "");
@@ -109,6 +138,10 @@ public class ProdutoTest extends SeleniumBase {
 	
 	@Test
 	public void DeveRetornarErroAtivacao() {
+		driver.navigate().to(getUrlBase() + "/conta/login");
+		dsl.escrever(By.id("email"), "luizmon.silva@gmail.com");
+		dsl.escrever(By.id("password"),"adminLH!336mn");
+		dsl.clicarBotao("btnLogar");
 		driver.navigate().to(getUrlBase() + "/admin/produtos/consultar");
 		dsl.clicarBotao("btnConsultar");
 		dsl.executarJS("document.querySelectorAll('#resultadoPesquisa a')[3].click()", "");
@@ -121,6 +154,10 @@ public class ProdutoTest extends SeleniumBase {
 	
 	@Test
 	public void DeveRetornarErroInativacao() {
+		driver.navigate().to(getUrlBase() + "/conta/login");
+		dsl.escrever(By.id("email"), "luizmon.silva@gmail.com");
+		dsl.escrever(By.id("password"),"adminLH!336mn");
+		dsl.clicarBotao("btnLogar");
 		driver.navigate().to(getUrlBase() + "/admin/produtos/consultar");
 		dsl.clicarBotao("btnConsultar");
 		dsl.executarJS("document.querySelectorAll('#resultadoPesquisa a')[3].click()", "");
@@ -133,6 +170,10 @@ public class ProdutoTest extends SeleniumBase {
 	
 	@Test
 	public void deveRetornarDadosObrigatorios() {
+		driver.navigate().to(getUrlBase() + "/conta/login");
+		dsl.escrever(By.id("email"), "luizmon.silva@gmail.com");
+		dsl.escrever(By.id("password"),"adminLH!336mn");
+		dsl.clicarBotao("btnLogar");
 		driver.navigate().to(getUrlBase() + "/admin/produtos/cadastro");
 		dsl.clicarBotao("btnSalvar");
 		callFinish = false;
@@ -141,6 +182,10 @@ public class ProdutoTest extends SeleniumBase {
 	
 	@Test
 	public void deveRetonarValidacaoReentrada() {
+		driver.navigate().to(getUrlBase() + "/conta/login");
+		dsl.escrever(By.id("email"), "luizmon.silva@gmail.com");
+		dsl.escrever(By.id("password"),"adminLH!336mn");
+		dsl.clicarBotao("btnLogar");
 		driver.navigate().to(getUrlBase() + "/admin/produtos/consultar");
 		(new WebDriverWait(driver, 70)).until(ExpectedConditions.elementToBeClickable(By.id("btnConsultar")));
 		dsl.clicarBotao("btnConsultar");
@@ -152,6 +197,10 @@ public class ProdutoTest extends SeleniumBase {
 	
 	@Test
 	public void deveRetornarValidacaoValorVenda() {
+		driver.navigate().to(getUrlBase() + "/conta/login");
+		dsl.escrever(By.id("email"), "luizmon.silva@gmail.com");
+		dsl.escrever(By.id("password"),"adminLH!336mn");
+		dsl.clicarBotao("btnLogar");
 		driver.navigate().to(getUrlBase() + "/admin/produtos/consultar");
 		dsl.clicarBotao("btnConsultar");
 		dsl.executarJS("document.querySelectorAll('#resultadoPesquisa a')[0].click()", "");
